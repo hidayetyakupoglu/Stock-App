@@ -1,1 +1,6 @@
-python -m pip install yfinance
+streamlit>=0.78.0
+alpha_vantage
+yfinance
+pandas
+plotly
+matplotlib
