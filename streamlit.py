@@ -4,6 +4,7 @@ import pandas as pd
 #import matplotlib.pyplot as plt
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
+from matplotlib import pyplot as plt
 
 st.write("""
 # Stock Tracker
@@ -63,3 +64,13 @@ st.write("""
 ### Volume
 """)
 st.line_chart(tickerDf.Volume)
+
+fig, ax = plt.subplots()
+plt.plot(tickerDf.Close, color="green")
+plt.title("Closing Prices for %s for the past %s months" % (tickerSymbol, monthsSlider))
+plt.xlabel("Closing Price")
+plt.ylabel("Time")
+ax.set_facecolor("gray")
+plt.grid(b=True, which='both',axis='both',c='blue')
+# st.pyplot(fig)
+st.plotly_chart(fig)
