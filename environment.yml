@@ -1,5 +1,0 @@
-name: stats
-dependencies:
-  - numpy
-  - pandas
-  - yfinance
