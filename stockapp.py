@@ -14,7 +14,7 @@ Use the slider to change the amount of **months** back from today that will be p
 
 """)
 
-timeChoices = {'Daily':['Days',365,'1d'],'Weekly':['Weeks',104,'1wk'],'Monthly':['Months',60,'1m'],'Quarterly':['Quarters',48,'3m']}
+timeChoices = {'Daily':['Days',365,'1d'],'Weekly':['Weeks',104,'5d'],'Monthly':['Months',60,'1m'],'Quarterly':['Quarters',48,'3m']}
 timeDf = pd.DataFrame(timeChoices)
 
 # This takes input from the user on which stock ticker that they would like to look at and gives a sliding scale to choose how much data to look back at in months
@@ -41,7 +41,7 @@ endDay = date.today()
 startDay = endDay - relativedelta(day=timeAmount)
 
 #history data values pulled based on startDay, endDay and the ticker previously chosen.
-tickerDf = tickerData.history(start=startDay, end=endDay, interval=timeDf[timeChoiceSlider][2])
+tickerDf = tickerData.history(start=startDay, end=endDay, period=timeDf[timeChoiceSlider][2])
 
 st.write("""
 Shown are the stock opening, closing, high, low, and volume on the day for %s.
