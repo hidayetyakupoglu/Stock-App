@@ -26,19 +26,26 @@ timeSlider = st.slider("Number of Previous %s" % timeDf[timeChoiceSlider][0], mi
 tickerData = yf.Ticker(tickerSymbol)
 
 companyName = tickerData.info['longName']
-timeAmount = 0
 if timeChoiceSlider == "Daily":
-    timeAmount = timeSlider
+    days = timeSlider
+    weeks = 0
+    months = 0
 elif timeChoiceSlider == "Weekly":
-    timeAmount = timeSlider * 7
+    days = 0
+    weeks = timeSlider
+    months = 0
 elif timeChoiceSlider == "Monthly":
-    timeAmount = timeSlider * 30
+    days = 0
+    weeks = 0
+    months = timeSlider
 else:
-    timeAmount = timeSlider * 90
+    days = 0
+    weeks = 0
+    months = timeSlider*3
 
 #Pulling date from today for most updated info, and picks a starting date based on slider
 endDay = date.today()
-startDay = endDay - relativedelta(days=timeAmount)
+startDay = endDay - relativedelta(days=days, weeks = weeks, months = months)
 
 #history data values pulled based on startDay, endDay and the ticker previously chosen.
 tickerDf = tickerData.history(start=startDay, end=endDay, interval=timeDf[timeChoiceSlider][2])
