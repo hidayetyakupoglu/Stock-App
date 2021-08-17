@@ -64,16 +64,16 @@ st.write("""
 """)
 st.line_chart(tickerDf.Volume)
 
-tickerDF_greyed = tickerDf.Close[tickerDf.Date < startDay]
+# tickerDF_greyed = tickerDf.Close[tickerDf.Date < startDay]
 
-#Close Price but using MatPlotLib
-fig, ax = plt.subplots()
-plt.plot(tickerDf.Close, color="green")
-plt.plot(tickerDF_greyed, color="blue")
-plt.title("Closing Prices for %s for the past %s months" % (tickerSymbol, monthsSlider))
-plt.xlabel("Closing Price")
-plt.ylabel("Time")
-ax.set_facecolor("gray")
-plt.grid(b=True, which='both',axis='both',c='blue')
-st.pyplot(fig)
+# #Close Price but using MatPlotLib
+# fig, ax = plt.subplots()
+# plt.plot(tickerDf.Close, color="green")
+# plt.plot(tickerDF_greyed, color="blue")
+# plt.title("Closing Prices for %s for the past %s months" % (tickerSymbol, monthsSlider))
+# plt.xlabel("Closing Price")
+# plt.ylabel("Time")
+# ax.set_facecolor("gray")
+# plt.grid(b=True, which='both',axis='both',c='blue')
+# st.pyplot(fig)
 # st.plotly_chart(fig)
