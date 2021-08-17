@@ -10,7 +10,7 @@ st.write("""
 
 Enter a **ticker symbol** into the text box to examine a different company.
 
-Use the slider to change the amount of **months** back from today that will be pulled.
+Use the slider to choose a **time interval** type and the amount of time back from today that will be pulled.
 
 """)
 
