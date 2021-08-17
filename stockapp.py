@@ -15,7 +15,7 @@ Use the slider to change the amount of **months** back from today that will be p
 """)
 
 # This takes input from the user on which stock ticker that they would like to look at and gives a sliding scale to choose how much data to look back at in months
-tickerSymbol = st.text_input("Enter a ticker symbol: ", "SPDR")
+tickerSymbol = st.text_input("Enter a ticker symbol: ", "TSLA")
 monthsSlider = st.slider("Number of Previous Months", min_value=1, max_value = 60, value = 12, step = 1)
 
 #Input ticker symbol sent to yfinance to get additional data long name of the company is pulled from the ticker
