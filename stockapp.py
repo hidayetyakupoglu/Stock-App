@@ -38,7 +38,7 @@ else:
 
 #Pulling date from today for most updated info, and picks a starting date based on slider
 endDay = date.today()
-startDay = endDay - relativedelta(day=timeAmount)
+startDay = endDay - relativedelta(days=timeAmount)
 
 #history data values pulled based on startDay, endDay and the ticker previously chosen.
 tickerDf = tickerData.history(start=startDay, end=endDay, interval=timeDf[timeChoiceSlider][2])
