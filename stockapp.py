@@ -14,7 +14,7 @@ Use the slider to change the amount of **months** back from today that will be p
 
 """)
 
-timeChoices = {'Daily':['Days',365,'1d'],'Weekly':['Weeks',104,'1wk'],'Monthly':['Months',60,'1m'],'Quarterly':['Quarters',48,'3m']}
+timeChoices = {'Daily':['Days',365,'1d'],'Weekly':['Weeks',104,'1wk'],'Monthly':['Months',60,'1mo'],'Quarterly':['Quarters',48,'3mo']}
 timeDf = pd.DataFrame(timeChoices)
 
 # This takes input from the user on which stock ticker that they would like to look at and gives a sliding scale to choose how much data to look back at in months
