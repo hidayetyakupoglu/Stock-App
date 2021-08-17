@@ -26,7 +26,7 @@ timeSlider = st.slider("Number of Previous %s" % timeDf[timeChoiceSlider][0], mi
 tickerData = yf.Ticker(tickerSymbol)
 
 companyName = tickerData.info['longName']
-
+timeAmount = 0
 if timeChoiceSlider == "Daily":
     timeAmount = timeSlider
 elif timeChoiceSlider == "Weekly":
